@@ -15,5 +15,6 @@ const createTodo = (req, res, next) => {
     const text = req.body.text;
     const newTodo = new todo_1.Todo(Math.random().toString(), text);
     TODOS.push(newTodo);
+    res.status(201).json({ message: "Created the todo.", createTodo: newTodo });
 };
 exports.createTodo = createTodo;
